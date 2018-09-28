@@ -18,6 +18,8 @@ buildscript {
 allprojects {
     repositories {
         google()
+        mavenLocal()
+        mavenCentral()
         jcenter()
     }
 }
@@ -38,4 +40,11 @@ ext {
     // App dependencies
     supportLibraryVersion = '27.1.1'
     junitVersion = '4.12'
+
+    // Architecture Components
+    roomVersion = "1.1.1"
+    archLifecycleVersion = "1.1.1"
+
+    // Retrofit
+    retrofit = "2.4.0"
 }

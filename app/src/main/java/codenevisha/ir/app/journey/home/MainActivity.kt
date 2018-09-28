@@ -1,7 +1,8 @@
-package codenevisha.ir.app.journey
+package codenevisha.ir.app.journey.home
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import codenevisha.ir.app.journey.R
 
 class MainActivity : AppCompatActivity() {
 
