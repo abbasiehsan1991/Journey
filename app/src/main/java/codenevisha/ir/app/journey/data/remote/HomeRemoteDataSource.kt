@@ -1,6 +1,5 @@
 package codenevisha.ir.app.journey.data.remote
 
-import android.util.Log
 import codenevisha.ir.app.journey.api.ApiService
 import codenevisha.ir.app.journey.api.ServiceGenerator
 import codenevisha.ir.app.journey.data.AppDataSource

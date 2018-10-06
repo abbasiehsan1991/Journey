@@ -45,5 +45,8 @@ dependencies {
     /*-----------------------/REST : Retrofit \-------------------*/
     implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofit"
     implementation  "com.squareup.retrofit2:converter-gson:$rootProject.retrofit"
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.8.1'
 
+    /*-----------------------/Timber\-------------------*/
+    implementation 'com.jakewharton.timber:timber:4.7.1'
 }

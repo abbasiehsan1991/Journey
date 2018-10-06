@@ -1,23 +1,27 @@
 package codenevisha.ir.app.journey.api
 
-import java.io.IOException
-import java.util.concurrent.TimeUnit
-
 import codenevisha.ir.app.journey.util.AppConstant
-import okhttp3.Interceptor
 import okhttp3.OkHttpClient
-import okhttp3.Request
-import okhttp3.Response
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import timber.log.Timber
+import java.util.concurrent.TimeUnit
 
 
 object ServiceGenerator {
 
+    var httpLoggingInterceptor =
+            HttpLoggingInterceptor(HttpLoggingInterceptor.Logger { message ->
+
+                Timber.d("Retrofit $message")
+
+            }).setLevel(HttpLoggingInterceptor.Level.BODY)
+
     private val httpClient = OkHttpClient.Builder()
+            .addInterceptor(httpLoggingInterceptor)
             .readTimeout(30, TimeUnit.SECONDS)
             .connectTimeout(30, TimeUnit.SECONDS)
-
 
     private val builder = Retrofit.Builder()
             .baseUrl(AppConstant.API_BASE_URL)
