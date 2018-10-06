@@ -24,7 +24,7 @@ abstract class AppDatabase : RoomDatabase() {
             synchronized(sLock) {
                 if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(context.applicationContext,
-                            AppDatabase::class.java, "visitor.db")
+                            AppDatabase::class.java, "journey.db")
                             .build()
                 }
                 return INSTANCE!!

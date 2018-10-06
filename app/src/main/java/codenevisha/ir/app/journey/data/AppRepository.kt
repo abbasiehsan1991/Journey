@@ -1,5 +1,6 @@
 package codenevisha.ir.app.journey.data
 
+import codenevisha.ir.app.journey.data.pojo.ArticleModel
 import codenevisha.ir.app.journey.util.AppConstant
 
 class AppRepository
@@ -21,8 +22,8 @@ private constructor(
     private fun getArticlesFromRemoteDataSource(callback: AppDataSource.LoadDataCallback , force: Boolean) {
 
         homeRemoteDataSource.getArticles(object  : AppDataSource.LoadDataCallback {
-            override fun onDataLoaded(articles: List<Any>) {
-                callback.onDataLoaded(articles)
+            override fun onDataLoaded(articlesModel: ArticleModel) {
+                callback.onDataLoaded(articlesModel)
             }
 
             override fun onDataNotAvailable(message: AppConstant.API_RESPONSE_MESSAGES) {
@@ -34,8 +35,8 @@ private constructor(
     private fun getArticlesFromLocalDataSource(callback: AppDataSource.LoadDataCallback ,force: Boolean) {
 
         homeLocalDataSource.getArticles(object  : AppDataSource.LoadDataCallback {
-            override fun onDataLoaded(articles: List<Any>) {
-                callback.onDataLoaded(articles)
+            override fun onDataLoaded(articlesModel: ArticleModel) {
+                callback.onDataLoaded(articlesModel)
             }
 
             override fun onDataNotAvailable(message: AppConstant.API_RESPONSE_MESSAGES) {

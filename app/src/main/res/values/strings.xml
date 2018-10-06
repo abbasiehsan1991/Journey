@@ -1,3 +1,4 @@
 <resources>
   <string name="app_name">Journey</string>
+  <string name="error_faild_get_data">Error while loading Data! Please try again later.</string>
 </resources>

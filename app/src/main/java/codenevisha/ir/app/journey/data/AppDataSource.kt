@@ -1,8 +1,7 @@
 package codenevisha.ir.app.journey.data
 
-import codenevisha.ir.app.journey.data.pojo.Article
+import codenevisha.ir.app.journey.data.pojo.ArticleModel
 import codenevisha.ir.app.journey.util.AppConstant
-import retrofit2.Response
 
 interface AppDataSource {
 
@@ -19,7 +18,7 @@ interface AppDataSource {
      */
     interface   LoadDataCallback{
 
-        fun onDataLoaded(articles : List<Any>)
+        fun onDataLoaded(articlesModel : ArticleModel)
         fun onDataNotAvailable(message : AppConstant.API_RESPONSE_MESSAGES)
     }
 

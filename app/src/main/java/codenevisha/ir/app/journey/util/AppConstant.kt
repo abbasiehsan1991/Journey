@@ -4,8 +4,9 @@ class AppConstant{
     companion object {
 
         val API_BASE_URL = "https://newsapi.org/v2/"
-        val USER_TOKEN = "089aa21e5b8548b8bc9f3c0f480f4590"
+        val USER_TOKEN = "be98e3602adc466b92db02e7f59cc5c0"
         val API_COUNTRY = "us"
+        val CATEGORY = "=business"
 
         val RESPONSE_REQUEST_400 = 400
 
