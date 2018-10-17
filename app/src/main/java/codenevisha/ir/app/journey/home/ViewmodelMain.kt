@@ -23,7 +23,7 @@ import codenevisha.ir.app.journey.util.SnackbarMessage
 class ViewmodelMain constructor(private val mTasksRepository: AppRepository, context: Application)
     : AndroidViewModel(context) {
 
-    val itemArticles = MutableLiveData<List<Article>>()
+    val itemArticles = MutableLiveData<ArrayList<Article>>()
 
     val dataLoading = MutableLiveData<Boolean>()
 
@@ -45,7 +45,7 @@ class ViewmodelMain constructor(private val mTasksRepository: AppRepository, con
     private fun loadTasks(forceUpdate: Boolean, showLoadingUI: Boolean) {
 
         if (showLoadingUI) {
-            dataLoading.setValue(true)
+            dataLoading.value = true
         }
 
 
@@ -60,7 +60,7 @@ class ViewmodelMain constructor(private val mTasksRepository: AppRepository, con
 
                 empty.value = articlesModel.articles?.isEmpty()
 
-                itemArticles.value = articlesModel.articles as List<Article>
+                itemArticles.value = articlesModel.articles as ArrayList<Article>
 
             }
 
@@ -81,6 +81,4 @@ class ViewmodelMain constructor(private val mTasksRepository: AppRepository, con
     companion object {
         private val TAG = "HomeViewmodel"
     }
-
-
 }

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <data>
+
+    <variable
+      name="article"
+      type="codenevisha.ir.app.journey.data.pojo.Article"/>
+
+  </data>
+
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+      android:layout_width="match_parent"
+      android:layout_height="240dp"
+      android:elevation="10dp"
+      app:cardBackgroundColor="@color/white"
+      app:cardCornerRadius="5dp">
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+          android:id="@+id/img_icon"
+          android:layout_width="match_parent"
+          android:layout_height="140dp"
+          android:adjustViewBounds="true"
+          android:scaleType="fitXY"
+          app:imageFromUrl="@{article.urlToImage}"/>
+
+        <TextView
+          android:id="@+id/txt_title"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="8dp"
+          android:layout_marginEnd="8dp"
+          android:maxLines="1"
+          android:text="@{article.title != null ? article.title : @string/text_no_title}"
+          android:textColor="@color/black"
+          android:textSize="16sp"
+          android:textStyle="bold"/>
+
+
+        <TextView
+          android:id="@+id/txt_description"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="8dp"
+          android:layout_marginEnd="8dp"
+          android:maxLines="2"
+          android:text="@{article.description !=null ? String.format(@string/text_description  , article.description) : @string/text_no_description}"
+          android:textColor="@color/black"
+          android:textSize="15sp"/>
+
+        <TextView
+          android:id="@+id/txt_author"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="8dp"
+          android:layout_marginEnd="8dp"
+          android:maxLines="1"
+          android:text="@{article.author != null ? String.format(@string/text_author,article.author): @string/no_author}"
+          android:textColor="@color/lightBlack"
+          android:textSize="12sp"/>
+
+        <TextView
+          android:id="@+id/txt_publishDate"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="8dp"
+          android:layout_marginEnd="8dp"
+          android:maxLines="2"
+          android:text="@{article.publishedAt !=null ? String.format(@string/text_publisged_at  , article.publishedAt):@string/text_no_date}"
+          android:textColor="@color/lightBlack"
+          android:textSize="12sp"/>
+
+      </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+  </LinearLayout>
+</layout>

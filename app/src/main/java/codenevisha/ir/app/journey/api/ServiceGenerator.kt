@@ -1,22 +1,24 @@
 package codenevisha.ir.app.journey.api
 
+import android.util.Log
 import codenevisha.ir.app.journey.util.AppConstant
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import timber.log.Timber
 import java.util.concurrent.TimeUnit
 
 
 object ServiceGenerator {
 
+    private const val TAG :String = "NET_REQUEST_RESPONSES"
+
     var httpLoggingInterceptor =
             HttpLoggingInterceptor(HttpLoggingInterceptor.Logger { message ->
 
-                Timber.d("Retrofit $message")
+                Log.d(TAG , "Retrofit $message")
 
-            }).setLevel(HttpLoggingInterceptor.Level.BODY)
+            }).setLevel(HttpLoggingInterceptor.Level.BODY)!!
 
     private val httpClient = OkHttpClient.Builder()
             .addInterceptor(httpLoggingInterceptor)

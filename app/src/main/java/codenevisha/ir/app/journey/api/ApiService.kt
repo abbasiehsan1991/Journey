@@ -8,9 +8,9 @@ import retrofit2.http.Query
 interface ApiService {
 
 
-    @GET("top-headlines?country=us")
-    fun getArticles(@Query("category") category: String,
-                    @Query("apiKey") userApiKey: String)
+    @GET("top-headlines?country=us&category=business")
+    fun getArticles(
+            @Query("apiKey") userApiKey: String)
             : Call<ArticleModel>
 
 }
