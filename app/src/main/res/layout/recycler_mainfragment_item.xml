@@ -37,6 +37,7 @@
           android:layout_height="140dp"
           android:adjustViewBounds="true"
           android:scaleType="fitXY"
+          android:elevation="5dp"
           app:imageFromUrl="@{article.urlToImage}"/>
 
         <TextView

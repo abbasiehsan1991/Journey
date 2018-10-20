@@ -19,6 +19,7 @@ class GlideBindingAdapter {
             val context = view.context
 
             val options = RequestOptions()
+                    .error(R.drawable.ic_error_black_24dp)
 
             imageUrl?.let {
 
@@ -37,6 +38,8 @@ class GlideBindingAdapter {
 
             Log.d(TAG, "setMainImageResource: $imageUrl")
             val options = RequestOptions()
+                    .error(R.drawable.ic_error_black_24dp)
+                    .placeholder(R.drawable.ic_cloud_download_black_24dp)
 
             imageUrl?.let {
 
