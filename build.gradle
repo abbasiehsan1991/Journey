@@ -47,4 +47,9 @@ ext {
 
     // Retrofit
     retrofit = "2.4.0"
+
+    //test
+    ext.junit_version    = '4.12'
+    ext.runner_version   = '1.0.1'
+    ext.espresso_version = '3.0.1'
 }
