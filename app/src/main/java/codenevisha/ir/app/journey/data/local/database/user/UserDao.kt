@@ -8,17 +8,17 @@ import android.arch.persistence.room.Query
 interface UserDao {
 
     /**
-     * Select all users from the users (We have only on user ) table.
+     * Select all userEntities from the userEntities (We have only on user ) table.
      *
-     * @return all users.
+     * @return all userEntities.
      */
-    @get:Query("SELECT * FROM users")
-    val users: List<User>
+    @get:Query("SELECT * FROM userEntities")
+    val userEntities: List<UserEntity>
 
     /**
-     * Insert user info into database
+     * Insert userEntity info into database
      */
     @Insert
-    fun addUser(user: User)
+    fun addUser(userEntity: UserEntity)
 
 }
